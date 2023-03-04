@@ -1,0 +1,432 @@
+/* Global properties */
+
+:root {
+  /* colors */
+  --pale-orange: hsl(25, 100%, 94%);
+  --orange: hsl(26, 100%, 55%);
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  /*  */
+
+  --drop-down-size: 300px;
+}
+/* End Global properties */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin-inline: 0px;
+  margin-block: 0px;
+  padding-inline: 0px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+/* End Reset */
+
+/* Set body  */
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* End Set body  */
+
+/* Inherit fonts to button*/
+
+button {
+  font: inherit;
+}
+/* End Inherit fonts to button*/
+
+/* Utility classes     */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.wv-100 {
+  width: 100vw;
+}
+.vh-100 {
+  height: 100vh;
+}
+
+.hide {
+  display: none !important;
+}
+
+.hide-opacity {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.one-line {
+  white-space: nowrap;
+}
+
+.pointer-event-none {
+  pointer-events: none;
+}
+.only-hide {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* Responsive container */
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  transform: scale(1.05);
+}
+
+/* End Utility classes */
+
+/* Components */
+/* common */
+
+header {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 10px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  height: 50px;
+  z-index: 2;
+}
+header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header + div {
+  height: 70px;
+}
+.action-btn {
+  background-color: var(--orange);
+  color: white;
+  font-weight: bold;
+  width: calc(var(--drop-down-size) - 20px);
+  padding: 10px 0px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+/* cart drop down */
+
+/* ********* I use tags (not recommended => prevent from reuse )not class cause it is just one dropdown  */
+
+.cart-drop-down-content-wrapper {
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: var(--drop-down-size);
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  flex-direction: column;
+  transition: opacity 300ms;
+  pointer-events: none;
+}
+
+.cart-drop-down_content_title {
+}
+
+.cart-drop-down-content-wrapper > * {
+  margin: 5px 10px;
+}
+
+#cart-drop-down:hover .cart-drop-down-content-wrapper {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+#cart-drop-down {
+  width: fit-content;
+  position: relative;
+}
+
+#cart-drop-down_btn {
+  position: relative;
+  cursor: pointer;
+  padding-top: 20px;
+}
+#cart-drop-down_total {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  color: white;
+  background-color: var(--orange);
+  border-radius: 10px;
+  min-width: 20px;
+  font-size: 14px;
+  max-width: fit-content;
+}
+#cart-drop-down_icon {
+}
+
+#cart-drop-down_content {
+}
+#cart-drop-down_content li {
+  padding: 10px 0px;
+}
+
+#cart-drop-down_content li {
+  border-top: 1px solid rgb(203, 200, 200);
+}
+
+#cart-drop-down_content_title {
+  font-weight: bold;
+}
+
+#cart-drop-down_content.show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.item-in-cart {
+  display: flex;
+  gap: 5px;
+}
+.item-in-cart > .small-thumbnail {
+  width: 50px;
+  border-radius: 5px;
+}
+.item-in-cart > .info {
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--dark-grayish-blue);
+  flex: 1;
+}
+.item-in-cart > .info strong {
+  color: var(--very-dark-blue);
+}
+
+/* end cart drop down */
+
+/* product */
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 310px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.product > img {
+  width: 100%;
+  border-radius: 10px;
+}
+.product .title {
+  color: var(--very-dark-blue);
+  font-size: 24px;
+}
+
+.product .prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.product .prices .current {
+  color: var(--very-dark-blue);
+  font-size: 24px;
+}
+.product .prices .discount {
+  background-color: var(--pale-orange);
+  color: var(--orange);
+  padding: 2px 4px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.product .prices .old {
+  color: var(--dark-grayish-blue);
+  margin-inline-start: auto;
+  text-decoration: line-through;
+}
+
+.product .actions {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--light-grayish-blue);
+  padding: 5px;
+}
+
+.product .actions .quantity {
+  color: var(--very-dark-blue);
+}
+
+/* end product */
+
+/* Modal */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.449);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.modal {
+  z-index: 3;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.modal .close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.modal-body {
+}
+/* End Modal */
+
+footer {
+  background-color: var(--orange);
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px 0;
+  color: var(--pale-orange);
+}
+
+footer a {
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+}
+/* End Components */

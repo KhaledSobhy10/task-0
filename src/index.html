@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Simple E-commerce page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style  -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="./images/logo.svg" />
+        <div id="cart-drop-down" />
+        <button class="btn" id="cart-drop-down_btn">
+          <span id="cart-drop-down_total" class="pointer-event-none">0</span>
+          <img
+            src="./images/icon-cart.svg"
+            id="cart-drop-down_icon pointer-event-none"
+          />
+        </button>
+
+        <div class="cart-drop-down-content-wrapper">
+          <strong class="cart-drop-down_content_title">Cart</strong>
+          <ul id="cart-drop-down_content"></ul>
+          <button class="btn action-btn" id="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </header>
+    <div></div>
+    <main class="container">
+      <div class="products-container"></div>
+    </main>
+
+    <div class="modal-wrapper hide-opacity">
+      <div class="modal container">
+        <button class="btn close-modal-btn">X</button>
+        <div class="modal-body">
+          <div class="product flex-row flex-wrap w-100">
+            <span style="height: 220px">
+              <img
+                id="quick-image"
+                src="./images/image-product-1.jpg"
+                style="height: 100%"
+            /></span>
+            <div class="flex-1 flex flex-col">
+              <strong class="title" id="quick-title"
+                >Fall Limited Edition Sneakers</strong
+              >
+
+              <p class="description">
+                Collections Men Women About Contact Sneaker Company Fall Limited
+                Edition Sneakers These low-profile sneakers are your perfect
+                casual wear companion. Featuring a durable rubber outer sole,
+                they will withstand everything the
+              </p>
+              <div class="prices mt-auto">
+                <strong class="current" id="quick-current-price"
+                  >$125.00</strong
+                >
+                <span class="discount" id="quick-discount">50%</span>
+                <span class="old" id="quick-old-price">$250.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="">
+      <div class="container">
+        Coded by
+        <a
+          href="https://www.linkedin.com/in/khaled-sobhy-51811a220/"
+          target="_blank"
+          >Khaled Sobhy</a
+        >
+        <p>Design Inspired from frontend mentor</p>
+      </div>
+    </footer>
+    <script src="./js/store.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
