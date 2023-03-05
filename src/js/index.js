@@ -1,3 +1,7 @@
+import ProductsStore from "./store.js";
+import { renderCart } from "./dropdown.js";
+import createModal from "./modal.js";
+
 // elements
 const productsContainer =
   document.getElementsByClassName("products-container")[0];
@@ -127,7 +131,7 @@ function addToCar(productId) {
   }
 }
 
-function removeFromCart(productId) {
+export function removeFromCart(productId) {
   const currentProducts = productsStore.getProducts();
   const newProduct = currentProducts.find(
     ({ product_id }) => productId === product_id

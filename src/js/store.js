@@ -1,6 +1,6 @@
 // our store
 
-function ProductsStore() {
+export default function ProductsStore() {
   let products = getProductsFromLocalStorage() || [
     {
       product_id: 1,

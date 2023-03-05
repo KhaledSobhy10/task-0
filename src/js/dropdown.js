@@ -1,3 +1,5 @@
+import { removeFromCart } from "./index.js";
+
 const cartDropDownBtn = document.getElementById("cart-drop-down_btn");
 const cartDropDownContent = document.getElementById("cart-drop-down_content");
 // handle cart clicked
@@ -13,7 +15,7 @@ window.onclick = function (event) {
     cartDropDownContent.classList.remove("show");
 };
 
-function renderCart(products) {
+export function renderCart(products) {
   const productsInCart = products.filter(({ added_to_cat }) => added_to_cat);
   const items = document.getElementById("cart-drop-down_content");
   const checkoutBtn = document.getElementById("checkout-btn");

@@ -1,6 +1,6 @@
 const modalWrapper = document.getElementsByClassName("modal-wrapper")[0];
 
-function createModal(product) {
+export default function createModal(product) {
   document.body.classList.add("overflow-hidden");
   modalWrapper.classList.remove("hide-opacity");
   const closeBtn = document.getElementsByClassName("close-modal-btn")[0];
