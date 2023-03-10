@@ -87,7 +87,7 @@ function createQuickButton(product) {
   });
   // eye icon
   const imgEye = document.createElement("img");
-  imgEye.src = "../images/eye-outline.svg";
+  imgEye.src = "./assets/images/eye-outline.svg";
   imgEye.width = "24";
   quickBtn.appendChild(imgEye);
   const quickBtnText = document.createTextNode("Quick view");
@@ -103,13 +103,13 @@ function createActionButton(product) {
   const iconBtn = document.createElement("img");
   let actionBtnText = "";
   if (product.added_to_cat) {
-    iconBtn.src = "../images/icon-delete.svg";
+    iconBtn.src = "./assets/images/icon-delete.svg";
     actionBtnText = "Remove from cart";
     actionButton.addEventListener("click", function () {
       removeFromCart(product.product_id);
     });
   } else {
-    iconBtn.src = "../images/icon-cart-white.svg";
+    iconBtn.src = "./assets/images/icon-cart-white.svg";
     actionBtnText = "Add to cart";
     actionButton.addEventListener("click", function () {
       addToCar(product.product_id);
