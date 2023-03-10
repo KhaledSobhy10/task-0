@@ -15,6 +15,8 @@ window.onload = function () {
     renderProducts(products, updatedProductsIDs);
     renderCart(products);
   });
+  // hide spinner
+  document.getElementById("products-spinner").classList.add("hide-opacity");
 };
 
 function renderProducts(products, updatedProductsIDs) {

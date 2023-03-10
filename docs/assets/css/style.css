@@ -422,6 +422,9 @@ footer {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px 0;
   color: var(--pale-orange);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 footer a {
@@ -429,4 +432,44 @@ footer a {
   font-weight: bolder;
   font-size: 18px;
 }
+
+.footer-helper{
+  margin-top: 50px;
+}
+
+/* Spinner */
+.spinner-wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+
+}
+.spinner{
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--orange);
+  background-color: transparent;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation-name: spinner-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spinner-animation {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+
+  }
+}
+
 /* End Components */
+
+
