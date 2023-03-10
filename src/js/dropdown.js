@@ -66,7 +66,7 @@ function createItemInCart(product) {
   });
   deleteBtn.classList.add("btn");
   const imgDelete = document.createElement("img");
-  imgDelete.src = "./images/icon-delete.svg";
+  imgDelete.src = "../images/icon-delete.svg";
   deleteBtn.appendChild(imgDelete);
   item.appendChild(deleteBtn);
   element.appendChild(item);
